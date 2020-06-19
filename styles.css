@@ -1,0 +1,279 @@
+:root {
+	height: 100vh;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	background-image: url('assets/Materica-Verde-Gris.png');
+	background-repeat: repeat;
+	background-size: all;
+	opacity: 0.85;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 300;
+	font-size: 19px;
+}
+
+.wrapper {
+	height: calc(100vh - 5rem);
+	padding: 2rem;
+}
+
+.logo {
+	height: 30vh;
+	background-image: url('assets/logo.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+@media (min-width: 1080px) and (min-height: 580px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 40% 45% 15% !important;
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-areas: 
+		"one two four"
+		".   two four"
+		".   two three";
+		align-items: stretch;
+	}
+
+	.logo {
+		grid-area: one;
+
+	}
+
+	.content {
+		grid-area: two;
+		align-self: end;
+	}
+
+	.contacts {
+		grid-area: three;
+		align-self: end;
+		padding: 0 !important;
+	}
+
+	.footer {
+		grid-area: four;
+		align-self: end;
+		margin-left: 100px;
+		word-wrap: normal;
+		white-space: nowrap; 
+
+		transform-origin: right;
+		transform: rotate(-90deg);
+
+		/* Safari */
+		-webkit-transform: rotate(-90deg);
+
+		/* Firefox */
+		-moz-transform: rotate(-90deg);
+
+		/* IE */
+		-ms-transform: rotate(-90deg);
+
+		/* Opera */
+		-o-transform: rotate(-90deg);
+
+		/* Internet Explorer */
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+	}
+
+	.form {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		grid-template-rows: repeat(4, fit-content(1fr));
+		grid-gap: 0.5rem;
+		grid-template-areas: 
+		"a a"
+		"b c"
+		"d e"
+		"f f"
+		"g g";
+	}
+
+	.name {
+		grid-area: a;
+	}
+
+	.company {
+		grid-area: b;
+	}
+
+	.website {
+		grid-area: c;
+	}
+
+	.phone {
+		grid-area: d;
+	}
+
+	.email {
+		grid-area: e;
+	}
+
+	.message {
+		grid-area: f;
+	}
+
+	.send {
+		grid-area: g;
+	}
+}
+
+@media (min-width: 1080px) and (min-height: 580px) and (max-height: 850px){
+	:root {
+		font-size: 12px !important;
+	}
+
+	#title {
+		font-size: 20px !important;
+	}
+
+	label {
+		font-size: 12px !important;
+	}
+}
+
+@media (min-width: 1080px) and (min-height: 850px) and (max-width: 1600px) and (max-height:1000px) {
+	:root {
+		font-size: 14px !important;
+	}
+
+	#title {
+		font-size: 28px !important;
+	}
+
+	label {
+		font-size: 14px !important;
+	}
+
+	.wrapper {
+		grid-template-columns: 40% 45% 15% !important;
+	}
+
+	.contacts {
+		padding: 0 !important;
+	}
+}
+
+@media (min-width: 1600px) and (min-height: 1000px) {
+
+	:root {
+		font-size: 19px !important;
+	}
+
+	#title {
+		font-size: 35px !important;
+	}
+
+	label {
+		font-size: 19px !important;
+	}
+
+	.wrapper {
+		grid-template-columns: 50% 35% 15% !important;
+	}
+
+	.contacts {
+		padding: 0 !important;
+	}
+}
+
+#title {
+	font-size: 35px;
+	font-weight: 200;
+	color: white;
+	margin: 0;
+}
+
+#subtitle {
+	margin: 0;
+}
+
+.form > * {
+	display: flex;
+	flex-direction: column-reverse;
+	color: white;
+	padding-top: 1rem;
+}
+
+input[type="text"], input[type="number"], input[type="email"], textarea {
+	background: inherit;
+	border: none;
+	border-bottom: 1px solid white;
+	padding-left: 2px;
+	font-size: 1rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:focus, textarea:focus {
+	border-left: 2px solid white;
+	outline: none;
+}
+
+input[type="button"] {
+	background: rgba(255, 255, 255, 0.25);
+  	border-radius: 3px;
+  	border: none;
+  	padding: 0.5rem;
+  	color: white;
+}
+
+input[type="button"]:disabled {
+	background: transparent;
+}
+
+textarea {
+	line-height: 1.5rem;
+	background-image: linear-gradient(transparent, transparent calc(1.5rem - 1px), white 0px);
+	background-size: 100% 1.5rem;
+	border-bottom: none;
+	resize: none;
+}
+
+label {
+	font-size: 15px;
+}
+
+.contacts {
+	width: auto;
+	text-align: right;
+	padding: 1rem 0;
+}
+
+.footer {
+	color: white;
+	text-align: center;
+	font-weight: 400;
+	padding: 1rem 0;
+}
+
+.footer a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: lightgrey;
+	transition: 200ms;
+}
+
+.error {
+	color: red;
+	font-weight: 500;
+	float: right;
+}
